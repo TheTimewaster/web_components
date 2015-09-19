@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HTML Imports</title>
+	<!--remove comment below for applying polyfills-->
+	<!--<script src="/bower_components/webcomponentsjs/webcomponents.js"></script>-->
+	<link rel="import" href="imports/dependency.html">
+</head>
+<body>
+	<div class="header">This is a test for</br>HTML Imports</div>
+	<script>
+	window.addEventListener('HTMLImportsLoaded', function(e) {
+		console.log("loaded!");
+	});
+	function supportsImports() {
+	  	return 'import' in document.createElement('link');
+	}
+
+	if (supportsImports()) {
+		console.log("supported");
+	} else {
+		console.log("not supported");
+	}
+</script>
+</body>
+</html>

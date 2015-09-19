@@ -1,0 +1,16 @@
+body
+{
+	background: url("sunset.jpg") no-repeat center center fixed; ;
+	background-size: cover;
+	width: 100%;
+	margin: 0;
+}
+.header
+{
+	font-family: 'Roboto Mono', sans-serif;
+	text-align: center;
+	margin-top: 100px;
+	font-size: 5em;
+	width: 100%;
+	color: white;
+}

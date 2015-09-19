@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Custom Elements</title>
+	<!--remove comment below for applying polyfills-->
+	<!--<script src="/bower_components/webcomponentsjs/webcomponents.js"></script>-->
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<style type="text/css">
+		body
+		{
+			margin: 0;
+			font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+		}
+		.headerBar
+		{
+			background-color: #3F51B5;
+			padding-left: 10px;
+			font-size: 1.2em;
+			line-height: 70px;
+			color: white;
+			width: 100%;
+			height: 70px;
+		}
+	</style>
+</head>
+<body>
+	<my-headerbar></my-headerbar>
+	<script type="text/javascript">
+		var MyHeaderBarProto = Object.create(HTMLElement.prototype);
+		MyHeaderBarProto.createdCallback = function()
+		{
+			var div = document.createElement('div');
+			div.className = 'headerBar';
+			div.textContent = 'My Header Bar';
+			this.appendChild(div);
+		}
+		document.registerElement('my-headerbar', {prototype : MyHeaderBarProto});
+	</script>
+</body>
+</html>

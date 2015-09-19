@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Template Element</title>
+	<!--<script src="/bower_components/webcomponentsjs/webcomponents.js"></script>-->
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<style type="text/css">
+		body
+		{
+			margin: 24px;
+			font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+		}
+		button
+		{
+			background-color: #FF5722;
+			border: none;
+			padding: 8px 16px 8px 16px;
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<div id="templateContainer">
+		<h1>Where are you?</h1>
+	</div>
+	<button onclick="addTemplateToDom()">SHOW!</button>
+	<template id="theTemplate">
+		<div id="insideTemplate">I am inside a template!</div>
+	</template>
+	<script type="text/javascript">
+		function addTemplateToDom() {
+			var template = document.querySelector('#theTemplate');
+			var container = document.querySelector('#templateContainer');
+			//put the template in container
+			container.appendChild(document.importNode(template.content, true));
+		}
+	</script>
+</body>
+</html>
